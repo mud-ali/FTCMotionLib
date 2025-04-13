@@ -8,7 +8,7 @@ class PID(val kp: Double, val ki: Double, val kd: Double, val kf: Double = 0.0) 
     /**
      * f(kf, error) : feedforward segment of PIDF output
      */
-    var ffEquation : ((Double, Double) -> Double)? = null
+    private var ffEquation : ((Double, Double) -> Double)? = null
 
     constructor(kp: Double, ki: Double, kd: Double, kf: Double = 0.0, ffEquation: (Double, Double) -> Double) : this(kp, ki, kd, kf) {
         this.ffEquation = ffEquation
@@ -23,7 +23,7 @@ class PID(val kp: Double, val ki: Double, val kd: Double, val kf: Double = 0.0) 
         // compute the derivative
         var derivative = 0.0
         if (errorHistory.size >= 2) {
-            derivative = (errorHistory[errorHistory.size - 2] - error) / dt
+            derivative = (errorHistory[errorHistory.size - 2] - error) / (2*dt)
         } else if (errorHistory.size == 1) {
             derivative = (errorHistory[0] - error) / dt
         }

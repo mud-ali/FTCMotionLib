@@ -20,6 +20,7 @@ object PIDConfig {
         ki = 0.01,
         kd = 0.001,
         kf = 0.01,
+        // this is a dummy feedforward equation to test the PID class
         ffEquation = { kf, error -> kf * cos(error) }
     )
 }
