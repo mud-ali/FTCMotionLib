@@ -46,6 +46,8 @@ class PID(val kp: Double, val ki: Double, val kd: Double, val kf: Double = 0.0) 
             errorHistory.removeAt(0)
         }
 
+        // there are a few other ways of constraining the output that would actually
+        // represent the distribution of values more accurately, such as scaling the numbers
         return min(max(output, -1.0), 1.0)
     }
 }
