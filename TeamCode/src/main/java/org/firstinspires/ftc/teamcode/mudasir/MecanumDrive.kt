@@ -55,7 +55,7 @@ class MecanumDrive(hardwareMap: HardwareMap) {
         backRightMotor.power = backRightPower / maxPower
     }
 
-    fun moveTo(x: Double, y: Double, heading: Double) {
+    fun moveTo(x: Double, y: Double, heading: Double, sampleTime : Double) {
         val currentX = localizer.getX()
         val currentY = localizer.getY()
         val currentHeading = localizer.getHeading()
@@ -64,6 +64,21 @@ class MecanumDrive(hardwareMap: HardwareMap) {
         val errorY = y - currentY
         val errorHeading = heading - currentHeading
 
-        //TODO: use PID to assign motor powers
+        val xPower = PIDConfig.MecanumPIDX.evalPID(
+            errorX,
+            sampleTime
+        )
+
+        val yPower = PIDConfig.MecanumPIDY.evalPID(
+            errorY,
+            sampleTime
+        )
+
+        val headingPower = PIDConfig.MecanumPIDHeading.evalPID(
+            errorHeading,
+            sampleTime
+        )
+
+        move(xPower, yPower, headingPower)
     }
 }
