@@ -9,6 +9,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap
 class Unlocalizer : Localizer {
 
     private lateinit var hardwareMap: HardwareMap
+    private var lastSampleTime = System.nanoTime() - 1e8
 
     override fun setHardwareMap(hardwareMap: HardwareMap) {
         this.hardwareMap = hardwareMap
@@ -34,8 +35,11 @@ class Unlocalizer : Localizer {
         return 0.0
     }
 
-    override fun update() {
-        return
+    override fun update(): Double {
+        val currentTime = System.nanoTime()
+        val timeDiff = (currentTime - lastSampleTime) / 1e9
+        lastSampleTime = currentTime.toDouble()
+        return timeDiff
     }
 
 }

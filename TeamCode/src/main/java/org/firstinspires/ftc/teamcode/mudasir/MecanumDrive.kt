@@ -55,7 +55,8 @@ class MecanumDrive(hardwareMap: HardwareMap) {
         backRightMotor.power = backRightPower / maxPower
     }
 
-    fun moveTo(x: Double, y: Double, heading: Double, sampleTime : Double) {
+    fun moveTo(x: Double, y: Double, heading: Double) {
+        val sampleTime = localizer.update()
         val currentX = localizer.getX()
         val currentY = localizer.getY()
         val currentHeading = localizer.getHeading()

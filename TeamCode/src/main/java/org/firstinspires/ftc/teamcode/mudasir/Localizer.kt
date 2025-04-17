@@ -9,5 +9,9 @@ interface Localizer {
     fun getHeading(): Double
     fun getVelocity(): Double
     fun getAngularVelocity(): Double
-    fun update()
+    /**
+     * This method should be called in a loop to update the localizer's state.
+     * @return the time since the last update in seconds.
+     */
+    fun update() : Double
 }
