@@ -3,6 +3,8 @@ package org.firstinspires.ftc.teamcode.mudasir
 import com.qualcomm.robotcore.hardware.DcMotor
 import com.qualcomm.robotcore.hardware.DcMotorSimple
 import com.qualcomm.robotcore.hardware.HardwareMap
+import org.firstinspires.ftc.teamcode.mudasir.config.PIDConfig
+import org.firstinspires.ftc.teamcode.mudasir.config.RobotConfig
 import org.firstinspires.ftc.teamcode.mudasir.localizers.Localizer
 import kotlin.math.max
 

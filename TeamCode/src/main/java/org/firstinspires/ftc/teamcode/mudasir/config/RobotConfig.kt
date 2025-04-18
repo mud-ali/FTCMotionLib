@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.mudasir
+package org.firstinspires.ftc.teamcode.mudasir.config
 
 object RobotConfig {
     var frontLeftMotorName = "FL"

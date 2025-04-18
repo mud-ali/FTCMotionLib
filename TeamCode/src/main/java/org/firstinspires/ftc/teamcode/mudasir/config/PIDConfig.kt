@@ -1,5 +1,6 @@
-package org.firstinspires.ftc.teamcode.mudasir
+package org.firstinspires.ftc.teamcode.mudasir.config
 
+import org.firstinspires.ftc.teamcode.mudasir.PID
 import kotlin.math.cos
 
 object PIDConfig {

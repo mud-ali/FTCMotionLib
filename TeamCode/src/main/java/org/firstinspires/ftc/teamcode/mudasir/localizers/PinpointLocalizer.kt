@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit
 import org.firstinspires.ftc.robotcore.external.navigation.UnnormalizedAngleUnit
+import org.firstinspires.ftc.teamcode.mudasir.config.LocalizationConstants
 import org.firstinspires.ftc.teamcode.mudasir.lib.GoBildaPinpointDriver
 
 class PinpointLocalizer : Localizer {
@@ -13,6 +14,9 @@ class PinpointLocalizer : Localizer {
 
     override fun setHardwareMap(hardwareMap: HardwareMap) {
         pinpoint = hardwareMap.get(GoBildaPinpointDriver::class.java, "odo")
+        pinpoint.setEncoderDirections(LocalizationConstants.Pinpoint.xEncoderDir, LocalizationConstants.Pinpoint.yEncoderDir)
+        pinpoint.setEncoderResolution(LocalizationConstants.Pinpoint.podsType)
+        pinpoint.resetPosAndIMU()
     }
 
     override fun getX(): Double {
