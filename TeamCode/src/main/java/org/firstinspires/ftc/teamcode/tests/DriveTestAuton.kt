@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.tests
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode
 import org.firstinspires.ftc.teamcode.mudasir.MecanumDrive
-import org.firstinspires.ftc.teamcode.mudasir.Unlocalizer
+import org.firstinspires.ftc.teamcode.mudasir.localizers.Unlocalizer
 
 class DriveTestAuton : LinearOpMode() {
 

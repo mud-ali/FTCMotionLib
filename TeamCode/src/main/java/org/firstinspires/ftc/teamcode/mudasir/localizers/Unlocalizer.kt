@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.mudasir
+package org.firstinspires.ftc.teamcode.mudasir.localizers
 
 import com.qualcomm.robotcore.hardware.HardwareMap
 
@@ -20,14 +20,18 @@ class Unlocalizer : Localizer {
     }
 
     override fun getY(): Double {
-        return  0.0
+        return 0.0
     }
 
     override fun getHeading(): Double {
         return 0.0
     }
 
-    override fun getVelocity(): Double {
+    override fun getVelocityX(): Double {
+        return 0.0
+    }
+
+    override fun getVelocityY(): Double {
         return 0.0
     }
 

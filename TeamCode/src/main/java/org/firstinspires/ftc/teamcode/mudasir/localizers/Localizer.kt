@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.mudasir
+package org.firstinspires.ftc.teamcode.mudasir.localizers
 
 import com.qualcomm.robotcore.hardware.HardwareMap
 
@@ -7,7 +7,8 @@ interface Localizer {
     fun getX(): Double
     fun getY(): Double
     fun getHeading(): Double
-    fun getVelocity(): Double
+    fun getVelocityX(): Double
+    fun getVelocityY(): Double
     fun getAngularVelocity(): Double
     /**
      * This method should be called in a loop to update the localizer's state.
